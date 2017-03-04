@@ -1,0 +1,37 @@
+html, body
+  height: 100%
+  width: 100%
+
+#slideout-menu
+  position: fixed
+  top: 0
+  bottom: 0
+  width: 200px
+  min-height: 100vh
+  overflow-y: auto
+  -webkit-overflow-scrolling: touch
+  z-index: 0
+  display: none
+
+.slideout-menu-left
+  left: 0
+
+.slideout-menu-right
+  right: 0
+
+#slideout-panel
+  position: relative
+  z-index: 1
+  will-change: transform
+  min-height: 100vh
+
+.slideout-open,
+.slideout-open body,
+.slideout-open #slideout-panel
+  overflow: hidden
+
+.slideout-open #slideout-menu
+  display: block
+
+#slideout-menu
+  background-color: $slideout-bg-color

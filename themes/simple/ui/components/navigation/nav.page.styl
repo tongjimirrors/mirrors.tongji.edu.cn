@@ -1,0 +1,80 @@
+.nav
+  background: $nav-bg-color
+  height: rem($nav-height)
+
+  +mobile()
+    display: none
+
+.nav--slideout-trigger
+  left: 0
+  top: 0
+  width: 100%
+  position: relative
+  display: none
+  background: $slideout-trigger-bg-color
+  color: $slideout-trigger-fore-color
+  line-height: rem($slideout-trigger-height)
+
+  +mobile()
+    display: block
+
+  .nav__hamburger
+    background: none
+    border: 0
+    border-radius: 0
+    color: $slideout-trigger-fore-color
+    outline: 0
+
+.nav__container
+  display: flex
+  justify-content: space-between
+  flex-direction: row
+  align-items: center
+
+.nav__container-item
+  display: flex
+  justify-content: flex-start
+  flex-direction: row
+  align-items: center
+
+.nav__logo
+  &, &:visited, &:hover
+    color: $nav-logo-color
+    text-decoration: none
+
+.nav__item
+  display: inline-block
+  line-height: rem($nav-height)
+  padding: rem(0 20px)
+  font-size: rem($font-size-small)
+  position: relative
+  transition: color .3s ease-out-cubic
+
+  &:after
+    display: block
+    margin: 0 auto
+    margin-top: rem(-3px)
+    width: 0
+    height: rem(3px)
+    background: transparent
+    content: ''
+    transition: background-color .3s, width .3s
+    transition-timing-function: ease-out-cubic
+
+  &, &:visited, &:active
+    color: $nav-inactive-fore-color
+
+  &:hover
+    color: $nav-hover-fore-color
+    text-decoration: none
+
+    &:after
+      background-color: $nav-hover-strip-color
+      width: 100%
+
+  &.active
+    color: $nav-active-fore-color
+
+    &:after
+      background-color: $nav-active-strip-color
+      width: 100%

@@ -1,0 +1,28 @@
+@import './var.inc.styl'
+
+// Normal Textbox
+input.textbox, textarea.textbox
+  form-styles()
+  background-color: $input-background-color
+  outline: $input-outline
+  transition: outline-color .2s, border-color .2s
+  transition-timing-function: ease-out-cubic
+
+  &:focus
+    border-color: $input-focus-border-color
+    outline: $input-focus-outline
+    outline-offset: 0
+
+  // Overwrite, for IE compatibility
+  &:read-only
+    outline: 0
+
+  &:disabled
+    opacity: 0.5
+
+textarea.textbox
+  height: rem(200px)
+
+.data-table
+  input.textbox, textarea.textbox
+    margin-bottom: 0

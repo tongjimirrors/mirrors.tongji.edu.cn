@@ -1,0 +1,30 @@
+@import '../components/form/var.inc.styl'
+
+.region
+  padding: rem($grid-padding-small)
+
+  +tablet()
+    padding: rem($grid-padding-medium)
+
+  +desktop()
+    padding: rem($grid-padding-large)
+
+.main__side
+  .section
+    padding-bottom: rem(30px)
+    margin-bottom: rem(30px)
+    border-bottom: 3px solid $section-separator-color
+    font-size: rem($font-size-secondary)
+
+    &:last-child
+      border-bottom: 0
+
+  .section__title
+    color: oc-gray-9
+    border-left: 3px solid $primary-color
+    padding: 0
+    padding-left: rem(10px)
+    font-size: rem($font-size)
+
+  .section__body
+    margin-top: rem(20px)

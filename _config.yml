@@ -1,0 +1,84 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: 同济大学开源软件镜像
+subtitle:
+description: <p>同济大学开源软件镜像由同济大学软件学院创新俱乐部创办、运行和维护，由<a href="http://nic.tongji.edu.cn" target="_blank">同济大学信息化办公室</a>提供网络带宽支持。</p>
+author: Tongji OSS Mirrors Team
+language: zh_CN
+timezone: Asia/Shanghai
+
+footer_links:
+  状态:
+    同步状态: /status
+    系统监控: /monitor
+    服务新闻: /archives
+  支持:
+    使用帮助: /help
+    发送邮件: \#
+    开源项目: \#
+  链接:
+    同济·软件学院: http://sse.tongji.edu.cn
+    同济·信息办: http://nic.tongji.edu.cn
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: https://mirrors.tongji.edu.cn
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link: true # Open external links in new tab
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace:
+
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 10
+pagination_dir: page
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: simple
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type:

@@ -1,0 +1,72 @@
+@import './var.inc.styl'
+
+.button
+  font-size: rem($font-size-secondary)
+  line-height: rem($form-control-height - 2)
+  background-color: lighten($default-color, 50%)
+  border: 1px solid $default-color
+  height: rem($form-control-height)
+  padding: rem(0 25px)
+  display: inline-block
+  outline: 0
+  margin: 0 0 1rem
+  transition: background-color .2s, box-shadow .5s
+  transition-timing-function: ease-out-sine
+  cursor: pointer
+
+  &, &:visited, &:enabled:hover
+    &, .typo &
+      color: $text-color
+
+  &:enabled:hover, &:focus
+    background-color: darken($default-color, 5%)
+    border-color: darken($default-color, 5%)
+    text-decoration: none
+    box-shadow: 0 4px 15px rgba(darken($default-color, 10%), 0.5)
+
+  &:focus
+    border-color: $input-focus-color
+
+  &.expanded
+    padding-left: 0
+    padding-right: 0
+    text-align: center
+    width: 100%
+
+  &.rounded
+    border-radius: rem($form-control-height / 2)
+
+  &.primary
+    border-color: $primary-color
+    background-color: $primary-color
+
+    &, &:visited, &:enabled:hover
+      &, .typo &
+        color: #FFF
+
+    &:enabled:hover
+      background-color: lighten(saturate($primary-color, 30%), 10%)
+      border-color: saturate($primary-color, 70%)
+      box-shadow: 0 4px 15px rgba(saturate($primary-color, 70%), 0.3)
+
+  &:disabled
+    opacity: 0.7
+
+.file::-webkit-file-upload-button
+  margin: 0 0 1rem
+
+.button.inverse
+  line-height: rem($form-control-height - 4)
+  border: 2px solid #FFF
+  background: none
+
+  &, &:visited
+    &, .typo &
+      color: #FFF
+
+  &:hover, &:focus
+    border-color: $immersive-primary-color
+    background: none
+    box-shadow: none
+    &, .typo &
+      color: $immersive-primary-color

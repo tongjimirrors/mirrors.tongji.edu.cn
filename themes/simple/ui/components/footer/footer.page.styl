@@ -1,0 +1,66 @@
+.footer
+  background: $footer-bg-color
+  color: $footer-fore-color
+  font-size: rem($font-size-small)
+
+  h1
+    font-size: rem($font-size-title)
+
+    +mobile()
+      padding: rem($grid-padding-small)
+      cursor: pointer
+      font-size: rem($font-size-secondary)
+
+.footer__category
+  padding-top: rem(30px)
+  padding-bottom: rem(30px)
+
+  +mobile()
+    padding-top: rem($grid-padding-small)
+    padding-bottom: rem($grid-padding-small)
+    border-bottom: 1px solid darken($footer-bg-color, 5%)
+
+    &.expandable
+      padding: 0
+
+  .expand-icon
+    display: none
+
+    +mobile()
+      display: inline-block
+
+  &.expanded .expand-icon
+    transform: rotate(180deg)
+
+.footer__category__list
+  margin-top: rem(10px)
+  margin-bottom: rem(10px)
+  font-size: rem($font-size-small)
+  line-height: 2
+
+  +mobile()
+    margin-top: 0
+    padding-left: rem($grid-padding-small)
+    padding-right: rem($grid-padding-small)
+
+.footer__category__expander
+  +mobile()
+    display: none
+
+  +above(rupture.mobile-cutoff)
+    display: block !important
+
+.footer__text
+  padding-top: rem($grid-padding-small)
+  padding-bottom: rem($grid-padding-small)
+
+/*
+
+.footer
+  background: $footer-bg-color
+  padding: rem(30px 0)
+  font-size: $font-size-secondary
+
+  .columns
+    margin: rem(10px 0)
+*/

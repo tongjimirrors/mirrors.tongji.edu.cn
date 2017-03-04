@@ -1,0 +1,39 @@
+$article-meta-height = 24px
+
+.article__meta
+  font-size: rem($font-size-small)
+  line-height: rem($article-meta-height)
+  margin: rem(20px 0)
+
+.article__meta-item
+  display: inline-block
+  margin-right: rem(10px)
+
+.article__tag-list
+  display: inline-block
+
+  &-item
+    display: inline-block
+    margin-right: rem(5px)
+
+  &-link
+    display: inline-block
+    padding: rem(0 15px)
+    background: oc-gray-2
+    border-radius: rem($article-meta-height / 2)
+
+    &:hover
+      background: $primary-color
+      color: #FFF
+      text-decoration: none
+
+.article__comments
+  margin-top: rem(50px)
+  padding-top: rem(50px)
+  border-top: 2px solid $comment-separator-color
+
+.article-list
+  margin-top: rem(20px)
+
+.article-list__item
+  border-top: 1px solid transparent

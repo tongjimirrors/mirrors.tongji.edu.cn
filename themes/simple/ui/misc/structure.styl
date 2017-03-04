@@ -1,0 +1,66 @@
+.main-container
+  min-height: 100vh
+  display: flex
+  flex-direction: column
+  background: $bg-color
+
++below(rupture.mobile-cutoff)
+  .main-container
+    background: $content-bg-color
+
+.main
+  flex: 1
+
++above(rupture.mobile-cutoff)
+  .main__content
+    flex: 9
+    background: $content-bg-color
+
+  .main__side
+    flex: 3
+    background: $side-bg-color
+
+  .main__inner
+    display: flex
+    flex-direction: row
+    align-items: stretch
+    align-content: stretch
+
++above(rupture.hd-cutoff)
+  .main
+    padding: rem(30px 0)
+    margin-top: $main-offset-top
+
+  .main__inner
+    box-shadow: 0 10px 20px rgba(#000, 0.1)
+
+
+// Media Object
+// Heavily borrowed from http://csswizardry.com/2013/05/the-flag-object/
+
+.media
+  display: table
+  width: 100%
+
+.media__left, .media__right, .media__body
+  display: table-cell
+  vertical-align: middle
+
+  &.top
+    vertical-align: top
+
+  &.bottom
+    vertical-align: bottom
+
+.media__left
+  padding-right: rem(10px)
+
+.media__right
+  padding-left: rem(10px)
+
+.media__left, .media__right
+  img
+    display: block
+
+.media__body
+  width: 100%

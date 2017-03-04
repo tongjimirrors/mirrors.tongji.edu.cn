@@ -1,0 +1,7 @@
+*.log
+*.sublime-*
+
+node_modules
+source/*
+
+!.gitkeep
