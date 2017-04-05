@@ -1,6 +1,8 @@
 import Vue from 'vue';
+import VueResource from 'vue-resource';
 import uTable from './components/u-table';
 
+Vue.use(VueResource);
 Vue.use(uTable);
 
 import 'jquery.transit';

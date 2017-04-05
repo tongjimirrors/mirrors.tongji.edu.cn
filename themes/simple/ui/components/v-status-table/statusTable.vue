@@ -16,10 +16,10 @@
     </thead>
     <tbody slot="tbody">
       <tr v-for="row in data">
-        <td class="col-name"><a class="typo-a" :href="row.href">{{ row.name }}</a></td>
-        <td class="col-updated">{{ relative(row.updateAt) }}</td>
-        <td class="col-status">{{ row.status }}</td>
-        <td class="col-action"><a class="typo-a" :href="`/help/${row.id}.html`">Help</a></td>
+        <td class="col-name"><a class="typo-a" :href="row.uri">{{ row.name }}</a></td>
+        <td class="col-updated">{{ relative(row.lastSucceededAt) }}</td>
+        <td class="col-status"><span v-if="row.lastExitCode == 0">Ok</span><span v-else>Error</span></td>
+        <td class="col-action"><!--<a class="typo-a" :href="`/help/${row.id}.html`">Help</a>--></td>
       </tr>
     </tbody>
   </u-table>
@@ -29,16 +29,23 @@ import moment from 'moment';
 
 export default {
   name: 'v-status-table',
+  created() {
+    this.$http.get('https://mirrors.tongji.edu.cn/status').then(res => {
+      this.data = res.body
+    }, err => {
+      console.error(err);
+    });
+  },
   data() {
     return {
       data: [
-        { id: 'apache', name: 'Apache', href: '/apache-dist/', updateAt: new Date(), status: 'OK' },
-        { id: 'packagist', name: 'Packagist', href: '#', updateAt: new Date(), status: 'OK' },
-        { id: 'bower', name: 'Bower', href: '#', updateAt: new Date(), status: 'OK' },
-        { id: 'homebrew-spec', name: 'Homebrew Spec', href: '/git/homebrew/', updateAt: new Date(), status: 'OK' },
-        { id: 'homebrew-bottle', name: 'Homebrew Bottle', href: '/homebrew-bottles/', updateAt: new Date(), status: 'OK' },
-        { id: 'ubuntu', name: 'Ubuntu', href: '/ubuntu/', updateAt: new Date(), status: 'OK' },
-        { id: 'centos', name: 'CentOS', href: '/centos/', updateAt: new Date(), status: 'OK' },
+        { id: 'apache', name: 'Apache', uri: '/apache-dist/', lastSucceededAt: new Date(), "lastExitCode": 0 },
+        { id: 'packagist', name: 'Packagist', uri: '#', lastSucceededAt: new Date(), "lastExitCode": 0 },
+        { id: 'bower', name: 'Bower', uri: '#', lastSucceededAt: new Date(), "lastExitCode": 0 },
+        { id: 'homebrew-spec', name: 'Homebrew Spec', uri: '/git/homebrew/', lastSucceededAt: new Date(), "lastExitCode": 0 },
+        { id: 'homebrew-bottle', name: 'Homebrew Bottle', uri: '/homebrew-bottles/', lastSucceededAt: new Date(), "lastExitCode": 0 },
+        { id: 'ubuntu', name: 'Ubuntu', uri: '/ubuntu/', lastSucceededAt: new Date(), "lastExitCode": 0 },
+        { id: 'centos', name: 'CentOS', uri: '/centos/', lastSucceededAt: new Date(), "lastExitCode": 0 },
       ],
     };
   },
