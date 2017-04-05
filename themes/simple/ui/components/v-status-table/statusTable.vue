@@ -19,7 +19,7 @@
         <td class="col-name"><a class="typo-a" :href="row.uri">{{ row.name }}</a></td>
         <td class="col-updated">{{ relative(row.lastSucceededAt) }}</td>
         <td class="col-status"><span v-if="row.lastExitCode == 0">Ok</span><span v-else>Error</span></td>
-        <td class="col-action"><!--<a class="typo-a" :href="`/help/${row.id}.html`">Help</a>--></td>
+        <td class="col-action"><a v-if="row.help != ''" class="typo-a" :href="row.help">Help</a></td>
       </tr>
     </tbody>
   </u-table>
